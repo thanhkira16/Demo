@@ -58,18 +58,18 @@
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                     commodo consequat.</p>
 
-                <div class="members-list">
-                    <div class="member-item">
+                <div class="row members-list">
+                    <div class="col col-3 text-center">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/member/bandmember.jpg" alt="" class="member-img">
                     </div>
 
-                    <div class="member-item">
+                    <div class="col col-3 text-center">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/member/bandmember.jpg" alt="" class="member-img">
                     </div>
 
-                    <div class="member-item">
+                    <div class="col col-3 text-center">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/member/bandmember.jpg" alt="" class="member-img">
                     </div>
@@ -90,34 +90,34 @@
                     </ul>
 
                     <!-- Places  -->
-                    <div class="place-list">
-                        <div class="place-item">
+                    <div class="row place-list">
+                        <div class="col col-3">
                             <img src="/assets/img/places/newyork.jpg" alt="New York" class="place-img">
                             <div class="place-body">
                                 <h4 class="place-name">New York</h4>
                                 <p class="place-date">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="" class="place-buy-btn">Buy Tickets</a>
+                                <button href="" class="btn js-tickets-btn">Buy Tickets</button>
                             </div>
                         </div>
 
-                        <div class="place-item">
+                        <div class="col col-3">
                             <img src="/assets/img/places/newyork.jpg" alt="Paris" class="place-img">
                             <div class="place-body">
                                 <h4 class="place-name">Paris</h4>
                                 <p class="place-date">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="" class="place-buy-btn">Buy Tickets</a>
+                                <button href="" class="btn js-tickets-btn">Buy Tickets</button>
                             </div>
                         </div>
 
-                        <div class="place-item">
+                        <div class="col col-3">
                             <img src="/assets/img/places/newyork.jpg" alt="San Francisco" class="place-img">
                             <div class="place-body">
                                 <h4 class="place-name">San Francisco</h4>
                                 <p class="place-date">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="" class="place-buy-btn">Buy Tickets</a>
+                                <button href="" class="btn js-tickets-btn">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -130,15 +130,43 @@
 
             <!-- Contact section  -->
             <div class="content-section">
-                <h2 class="section-title">THE BAND</h2>
-                <p class="section-slogan">We love music</p>
+                <h2 class="section-title">CONTACT</h2>
+                <p class="section-slogan">Fan? Drop a note!</p>
+                <div class="row contact-content">
+                    <div class="col col-2 contact-info">
+                        <p><i class="ti-location-pin"></i>Chicago, US</p>
+                        <p><i class="ti-mobile"></i>Phone: +00 151515</p>
+                        <p><i class="ti-email"></i>Email: mail@mail.com</p>
+                        
+                    </div>
+                    <div class="col col-2 contact-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-2">
+                                    <input type="text" name="" required placeholder="Name" id="" class="form-control">
+                                </div>
+    
+                                <div class="col col-2">
+                                    <input type="email" name="" required placeholder="Email" id="" class="form-control">
+                                </div>
+                                <div class="col col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-1 mt-8">
+                                    <input type="text" name="" required placeholder="Message" id="" class="form-control">
+                                </div>
 
+                            </div>
+                            <input class="pull-right mt-16 btn" type="submit" value="SEND">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="modal">
-            <div class="modal-container">
-                <div class="modal-close">
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+                <div class="modal-close js-modal-close">
                     <i class="ti-close"></i>
                 </div>
 
@@ -172,9 +200,53 @@
             </div>
         </div>
 
+        <div class="map-section">
+            <img src="/assets/img/map.jpg" alt="">
+        </div>
 
-        <div id="footer"></div>
+
+
+        <div id="footer">
+            <div class="socials-list">
+                <a href=""><i class="ti-facebook"></i></a>
+                <a href=""><i class="ti-instagram"></i></a>
+                <a href=""><i class="ti-google"></i></a>
+                <a href=""><i class="ti-github"></i></a>
+                <a href=""><i class="ti-reddit"></i></a>
+                <a href=""><i class="ti-pinterest"></i></a>
+            </div>
+
+            <p class="copyright">Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a></p>
+        </div>
     </div>
+
+    <script>
+        const buyBtns = document.querySelectorAll('.js-tickets-btn')
+        const modal = document.querySelector('.js-modal')
+        const modalClose = document.querySelector('.js-modal-close')
+        const modalContainer = document.querySelector('.js-modal-container')
+
+        function showBuyTickets(){
+            modal.classList.add('open')
+        }
+
+        function hideBuyTickets(){
+            modal.classList.remove('open')
+        }
+
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTickets)
+        }
+
+        modalClose.addEventListener('click', hideBuyTickets)
+
+        modal.addEventListener('click', hideBuyTickets)
+
+        modalContainer.addEventListener('click', function(event){
+            event.stopPropagation()
+        })
+
+    </script>
 </body>
 
 </html>
