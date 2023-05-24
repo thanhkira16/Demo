@@ -22,6 +22,12 @@
     margin-right: -8px;
 }
 
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
 .col{
     float: left;
     padding: 0 8px;
@@ -82,6 +88,7 @@ html{
     left: 0;
     position: fixed;
     z-index: 1;
+    overflow: hidden;
 }
 
 #nav{
@@ -139,21 +146,41 @@ html{
     font-size: 12px;
 }
 
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn{
     float: right;
     padding: 0 21px;
-}
-
-#header .search-icon{
-    color: #fff;
-    font-size: 20px;
-    line-height: 46px;
 }
 
 #header .search-btn:hover{
     background-color: #f44336;
     cursor: pointer;
 }
+
+#header .menu-icon,
+#header .search-icon{
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
+}
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+
+
 
 
 #slider{
@@ -189,8 +216,12 @@ html{
 
 #content .content-section{
     width: 800px;
-    padding: 64px 0;
-    margin: 0 auto;
+    max-width: 100%;
+    padding: 64px 0 112px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-title{
@@ -286,7 +317,6 @@ html{
 
 .place-list{
     margin-top: 32px;
-    margin-bottom: 48px;
 }
 
 .place-body{
@@ -361,6 +391,7 @@ html{
     align-items: center;
     font-size: 30px;
     color: #fff;
+
 }
 
 .modal-heading-icon{
