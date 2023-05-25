@@ -68,17 +68,17 @@
                     commodo consequat.</p>
 
                 <div class="row members-list">
-                    <div class="col col-3 text-center">
+                    <div class="col col-3 s-col-full mt-16 text-center">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/member/bandmember.jpg" alt="" class="member-img">
                     </div>
 
-                    <div class="col col-3 text-center">
+                    <div class="col col-3 s-col-full mt-16 text-center">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/member/bandmember.jpg" alt="" class="member-img">
                     </div>
 
-                    <div class="col col-3 text-center">
+                    <div class="col col-3 s-col-full mt-16 text-center">
                         <p class="member-name">Name</p>
                         <img src="/assets/img/member/bandmember.jpg" alt="" class="member-img">
                     </div>
@@ -100,8 +100,8 @@
                     </ul>
 
                     <!-- Places  -->
-                    <div class="row place-list">
-                        <div class="col col-3">
+                    <div class="row places-list">
+                        <div class="s-col-full mt-16 col col-3">
                             <img src="/assets/img/places/newyork.jpg" alt="New York" class="place-img">
                             <div class="place-body">
                                 <h4 class="place-name">New York</h4>
@@ -111,7 +111,7 @@
                             </div>
                         </div>
 
-                        <div class="col col-3">
+                        <div class="s-col-full mt-16 col col-3">
                             <img src="/assets/img/places/newyork.jpg" alt="Paris" class="place-img">
                             <div class="place-body">
                                 <h4 class="place-name">Paris</h4>
@@ -121,7 +121,7 @@
                             </div>
                         </div>
 
-                        <div class="col col-3">
+                        <div class="s-col-full mt-16 col col-3">
                             <img src="/assets/img/places/newyork.jpg" alt="San Francisco" class="place-img">
                             <div class="place-body">
                                 <h4 class="place-name">San Francisco</h4>
@@ -275,14 +275,20 @@
                 header.style.height = null
             }
         }
-
+        
         // Automatically closeing when clicked menu 
         var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
         for (var i = 0; i < menuItems.length; i++) {
             var menuItem = menuItems[i];
 
-            menuItem.onclick = function () {
-                header.style.height = null
+            menuItem.onclick = function (event) {
+                // Event for subnav
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
+                if(isParentMenu){
+                    event.preventDefault();
+                }else{
+                    header.style.height = null;
+                }
             }
         }
         // changing background when clicked 

@@ -74,6 +74,7 @@
 
 html{
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 #main{
@@ -88,7 +89,6 @@ html{
     left: 0;
     position: fixed;
     z-index: 1;
-    overflow: hidden;
 }
 
 #nav{
@@ -128,7 +128,6 @@ html{
     position: absolute;
     list-style: none;
     background-color: #fff;
-    position: absolute;
     min-width: 160px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -222,6 +221,7 @@ html{
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+    transition: 0.6s;
 }
 
 #content .section-title{
@@ -256,7 +256,7 @@ html{
 /* Team section  */
 
 #content .members-list{
-    margin-top: 47px;
+    margin-top: 32px;
 }
 
 #content .member-name{
@@ -315,8 +315,8 @@ html{
 }
 
 
-.place-list{
-    margin-top: 32px;
+.places-list{
+    margin-top: 16px;
 }
 
 .place-body{
