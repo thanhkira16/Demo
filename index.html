@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The band</title>
+    <!-- style css  -->
     <link rel="stylesheet" href="/assets/style.css">
+    <!-- responsive   -->
     <link rel="stylesheet" href="/assets/reponsive.css">
+    <!-- themify icon  -->
     <link rel="stylesheet" href="assets/font/themify-icons/themify-icons.css">
 </head>
 
@@ -107,7 +110,7 @@
                                 <h4 class="place-name">New York</h4>
                                 <p class="place-date">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button href="" class="btn js-tickets-btn">Buy Tickets</button>
+                                <button href="" class="btn s-full-width js-tickets-btn ">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -117,7 +120,7 @@
                                 <h4 class="place-name">Paris</h4>
                                 <p class="place-date">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button href="" class="btn js-tickets-btn">Buy Tickets</button>
+                                <button href="" class="btn s-full-width js-tickets-btn ">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -127,7 +130,7 @@
                                 <h4 class="place-name">San Francisco</h4>
                                 <p class="place-date">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button href="" class="btn js-tickets-btn">Buy Tickets</button>
+                                <button href="" class="btn s-full-width js-tickets-btn ">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -145,20 +148,20 @@
                 <h2 class="section-title">CONTACT</h2>
                 <p class="section-slogan">Fan? Drop a note!</p>
                 <div class="row contact-content">
-                    <div class="col col-2 contact-info">
+                    <div class="col col-2 s-col-full contact-info">
                         <p><i class="ti-location-pin"></i>Chicago, US</p>
-                        <p><i class="ti-mobile"></i>Phone: +00 151515</p>
-                        <p><i class="ti-email"></i>Email: mail@mail.com</p>
+                        <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
+                        <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
 
                     </div>
-                    <div class="col col-2 contact-form">
+                    <div class="col col-2 s-col-full contact-form">
                         <form action="">
                             <div class="row">
-                                <div class="col col-2">
+                                <div class="col col-2 s-col-full">
                                     <input type="text" name="" required placeholder="Name" id="" class="form-control">
                                 </div>
 
-                                <div class="col col-2">
+                                <div class="col col-2 s-col-full s-mt-8">
                                     <input type="email" name="" required placeholder="Email" id="" class="form-control">
                                 </div>
                                 <div class="col col-2"></div>
@@ -170,7 +173,7 @@
                                 </div>
 
                             </div>
-                            <input class="pull-right mt-16 btn" type="submit" value="SEND">
+                            <input class="pull-right mt-16 btn s-full-width" type="submit" value="SEND">
                         </form>
                     </div>
                 </div>
@@ -232,6 +235,9 @@
             <p class="copyright">Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a></p>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 
     <script>
         const buyBtns = document.querySelectorAll('.js-tickets-btn')
@@ -275,7 +281,7 @@
                 header.style.height = null
             }
         }
-        
+
         // Automatically closeing when clicked menu 
         var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
         for (var i = 0; i < menuItems.length; i++) {
@@ -284,9 +290,9 @@
             menuItem.onclick = function (event) {
                 // Event for subnav
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
-                if(isParentMenu){
+                if (isParentMenu) {
                     event.preventDefault();
-                }else{
+                } else {
                     header.style.height = null;
                 }
             }
